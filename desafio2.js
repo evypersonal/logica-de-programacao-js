@@ -1,8 +1,8 @@
+// Desafio finalizado utilizando estrutura de decisão IF-ELSE e operadores lógicos 
+
 const peso = window.prompt('Digite seu peso: ');
 const altura = window.prompt('Digite sua altura:');
-const mult = altura * 2;
-const imc = mult / peso;
-// const imc = peso / altura * 2;
+const imc = peso / (altura ** 2);
 
 if(imc < 18.5){
     window.alert('Abaixo do peso');
