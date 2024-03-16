@@ -122,12 +122,62 @@ if (media >= 7) {
 
 ## desafio2.js
 
-Crie um programa que calcule o Índice de Massa Corporal (IMC) de uma pessoa. 
+<!-- Crie um programa que calcule o Índice de Massa Corporal (IMC) de uma pessoa. 
 
 Orientações: 
 * Utilize o método `prompt()` do objeto `window` para realizar a leitura dos dados de entrada.
 * Utilize a fórmula **IMC = peso / altura²** para calcular o IMC.
-* Utilize a estrutura **if-else** para classificar o IMC de acordo com a tabela da OMS:
+* Utilize a estrutura **if-else** para classificar o IMC de acordo com a tabela da OMS: -->
+
+~~~js
+const peso = window.prompt('Digite seu peso: ');
+const altura = window.prompt('Digite sua altura:');
+const imc = peso / (altura ** 2);
+~~~
+
+No código acima solicitei aos usuários para digitar seu `peso` através do `prompt` do navegador, e em seguida atribui a resposta na variável `peso`;
+Fiz o mesmo com a variável `altura` no qual o usuário informa sua altura;
+Por fim atribui à variável `imc` o calculo utilizado para obter o imc = peso / altura²;
+
+Em seguida utilizei o seguinte código:
+
+~~~js
+if(imc < 18.5){
+    window.alert('Abaixo do peso');
+}else if(imc == 18.5 || imc <= 24.9){
+    window.alert('Peso normal');
+}else if(imc == 25 || imc <= 29.9){
+    window.alert('Sobrepeso');
+}else if(imc == 30 || imc <= 34.9){
+    window.alert('Obesidade Grau I');
+}else if(imc == 35 || imc <= 39.9){
+    window.alert('Obesidade Grau II');
+}else{
+    window.alert('Obesidade Grau III');
+}
+~~~
+
+Nele utilizei a estrutura de condição `IF-ELSE` juntamente com `operadores lógicos` para determinar em qual indicação de imc a pessoa se enquadra.
+
+## desafio2-comp.js
+
+Nesse desafio a proposta é a mesma que na anterior, porém utilizei a estrutura de condição `IF-ELSE` juntamente com `operadores de comparação` para determinar em qual indicação de imc a pessoa se enquadra.
+
+~~~js
+if(imc < 18.5){
+    window.alert('Abaixo do peso');
+}else if(imc <= 24.9){
+    window.alert('Peso normal');
+}else if(imc <= 29.9){
+    window.alert('Sobrepeso');
+}else if(imc <= 34.9){
+    window.alert('Obesidade Grau I');
+}else if(imc <= 39.9){
+    window.alert('Obesidade Grau II');
+}else{
+    window.alert('Obesidade Grau III');
+}
+~~~
 
 IMC | Indicação
 ----- | -----
