@@ -198,4 +198,4 @@ Kelvin | Farenheit | tF = (tK - 273.15) * 9/5 + 32
 
 ### Problema adicional
 
-Como executar dois "programas" na mesma página?ol
+Como executar dois "programas" na mesma página?

@@ -1,32 +1,25 @@
 
-let temperatura = window.prompt("Digite a temperatura que deseja converter: ");
-let escalaAtual = window.prompt("Digite a escala atual dessa temperatura (F , C, K): ");
-let escalaFutura = window.prompt("Digite a escala que deseja converter (F, C, K): ");
+const 
+    temperatura = window.prompt("Digite a temperatura que deseja converter: "),
+    escalaAtual = window.prompt("Digite a escala atual dessa temperatura (F , C, K): "),
+    escalaFutura = window.prompt("Digite a escala que deseja converter (F, C, K): ");
 
-const
-    celsiusXFarenheit = (temperatura * 9/5) + 32,
-    celsiusXKelvin = temperatura - 273.15,
-    farenheitXCelsius = (temperatura - 32) * 5/9,
-    farenheitXKelvin = (temperatura + 459.67) * 5/9,
-    kevinXCelsius = temperatura + 273.15,
-    kelvinXFarenheit = temperatura * 9/5 - 459.67;
-
-if (escalaAtual == "C" || "c") {
-    if (escalaFutura == "F" || "f"){
-        window.alert (`Temperatura a ser convertida: ${temperatura} --> Após conversão: ${celsiusXFarenheit}`)
+if (escalaAtual == "C" || escalaAtual == "c"){
+    if (escalaFutura == "F" || escalaFutura == "f"){
+        window.alert (`Temperatura a ser convertida: ${temperatura}°C --> Após conversão: ${(temperatura * 1.8) + 32}°F`);
     }else {
-        window.alert(`Temperatura a ser convertida: ${temperatura} --> Após conversão: ${celsiusXKelvin}`)
+        window.alert(`Temperatura a ser convertida: ${temperatura}°C --> Após conversão: ${temperatura + 273.15.toFixed(1)}K`);
     }
-}else if(escalaAtual == "F" || "f"){
-    if (escalaFutura == "C" || "c"){
-        window.alert(`Temperatura a ser convertida: ${temperatura} --> Após conversão: ${farenheitXCelsius}`)
+} else if (escalaAtual == "F" || escalaAtual == "f"){
+    if (escalaFutura == "C" || escalaFutura == "c"){
+        window.alert(`Temperatura a ser convertida: ${temperatura}°F --> Após conversão: ${(temperatura - 32) / 1.8}°C`);
     }else {
-        window.alert(`Temperatura a ser convertida: ${temperatura} --> Após conversão: ${farenheitXKelvin}`)
+        window.alert(`Temperatura a ser convertida: ${temperatura}°F --> Após conversão: ${(temperatura - 32) * 5/9 + 273.15}K`);
     }
-}else {
-    if (escalaFutura == "C" || "c"){
-        window.alert(`Temperatura a ser convertida: ${temperatura} --> Após conversão: ${kevinXCelsius}`)
+} else{
+    if (escalaFutura == "C" || escalaFutura == "c"){
+        window.alert(`Temperatura a ser convertida: ${temperatura}K --> Após conversão: ${temperatura - 273.15}°C`);
     }else {
-        window.alert(`Temperatura a ser convertida: ${temperatura} --> Após conversão: ${kelvinXFarenheit}`)
+        window.alert(`Temperatura a ser convertida: ${temperatura}K --> Após conversão: ${(temperatura - 273.15) * 1.8 + 32}°F`);
     }
 }
