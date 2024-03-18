@@ -130,9 +130,10 @@ Orientações:
 * Utilize a estrutura **if-else** para classificar o IMC de acordo com a tabela da OMS: -->
 
 ~~~js
-const peso = window.prompt('Digite seu peso: ');
-const altura = window.prompt('Digite sua altura:');
-const imc = peso / (altura ** 2);
+const 
+    peso = window.prompt('Digite seu peso: ');
+    altura = window.prompt('Digite sua altura:');
+    imc = peso / (altura ** 2);
 ~~~
 
 No código acima solicitei aos usuários para digitar seu `peso` através do `prompt` do navegador, e em seguida atribui a resposta na variável `peso`;
@@ -143,41 +144,21 @@ Em seguida utilizei o seguinte código:
 
 ~~~js
 if(imc < 18.5){
-    window.alert('Abaixo do peso');
-}else if(imc == 18.5 || imc <= 24.9){
-    window.alert('Peso normal');
-}else if(imc == 25 || imc <= 29.9){
-    window.alert('Sobrepeso');
-}else if(imc == 30 || imc <= 34.9){
-    window.alert('Obesidade Grau I');
-}else if(imc == 35 || imc <= 39.9){
-    window.alert('Obesidade Grau II');
-}else{
-    window.alert('Obesidade Grau III');
-}
-~~~
-
-Nele utilizei a estrutura de condição `IF-ELSE` juntamente com `operadores lógicos` para determinar em qual indicação de imc a pessoa se enquadra.
-
-## desafio2-comp.js
-
-Nesse desafio a proposta é a mesma que na anterior, porém utilizei a estrutura de condição `IF-ELSE` juntamente com `operadores de comparação` para determinar em qual indicação de imc a pessoa se enquadra.
-
-~~~js
-if(imc < 18.5){
-    window.alert('Abaixo do peso');
+    window.alert(`IMC: ${imc.toFixed(2)} | Abaixo do peso`);
 }else if(imc <= 24.9){
-    window.alert('Peso normal');
+    window.alert(`IMC: ${imc.toFixed(2)} | Peso normal`);
 }else if(imc <= 29.9){
-    window.alert('Sobrepeso');
+    window.alert(`IMC: ${imc.toFixed(2)} | Sobrepeso`);
 }else if(imc <= 34.9){
-    window.alert('Obesidade Grau I');
+    window.alert(`IMC: ${imc.toFixed(2)} | Obesidade Grau I`);
 }else if(imc <= 39.9){
-    window.alert('Obesidade Grau II');
+    window.alert(`IMC: ${imc.toFixed(2)} | Obesidade Grau II`);
 }else{
-    window.alert('Obesidade Grau III');
+    window.alert(`IMC: ${imc.toFixed(2)} | Obesidade Grau III`);
 }
 ~~~
+
+Nele utilizei a estrutura de condição `IF-ELSE` juntamente com `operadores de comparação` para determinar em qual indicação de imc a pessoa se enquadra.
 
 IMC | Indicação
 ----- | -----
@@ -188,12 +169,33 @@ Abaixo de 18,5	| Abaixo do peso
 35,0 - 39,9	| Obesidade grau II
 Acima de 40,0 |	Obesidade grau III
 
-Observações:
+><p>Observações:</p>
+><p>O IMC é apenas uma medida geral e não leva em consideração a composição corporal (músculos versus gordura).</p>
+><p>Pessoas com muita massa muscular podem ter um IMC alto, mesmo que não sejam obesas.</p>
+><p>É importante consultar um médico ou nutricionista para uma avaliação individualizada.</p>
+><p>Para mais informações:<p>
+><p>Organização Mundial da Saúde (OMS): </p> 
+<https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight>
 
-O IMC é apenas uma medida geral e não leva em consideração a composição corporal (músculos versus gordura).
-Pessoas com muita massa muscular podem ter um IMC alto, mesmo que não sejam obesas.
-É importante consultar um médico ou nutricionista para uma avaliação individualizada.
+## desafio3.js
 
-Para mais informações:
+Crie um conversor de temperatura entre as escalas Celsius, Fahrenheit e Kelvin. O usuário deve digitar a temperatura a ser convertida e a escala da temperatura atual e a escala para o qual o valor deve ser convertido.
 
-Organização Mundial da Saúde (OMS): <https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight>
+Entradas (3): Valor atual da temperatura, escala atual da temperatura, escala para exibição (conversão).
+
+Saidas (1): Valor convertido na escala de conversão
+
+### Fórmulas
+
+De | Para | Fórmula
+---|------|--------
+Celsius | Fahrenheit | tF = (tC * 9/5) + 32
+Celsius | Kelvin | tK = tC - 273.15
+Farenheit | Celsius | tC = (tF - 32) * 5/9
+Farenheit | Kelvin | tK = (tF + 459.67) * 5/9
+Kelvin | Celsius | tC = tK + 273.15 
+Kelvin | Farenheit | tF = (tK - 273.15) * 9/5 + 32
+
+### Problema adicional
+
+Como executar dois "programas" na mesma página?ol

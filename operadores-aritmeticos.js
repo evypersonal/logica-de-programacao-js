@@ -1,6 +1,6 @@
 //selecionar todas as lets para const CTRL + D
 const num1 = 40;
-const num2 = 20;
+const num2 = 2;
 
 //Quando declarar variável no texto é necessário utilizar o acento grave ``
 //Duplicar linha Alt + Shift + Seta
@@ -10,4 +10,5 @@ console.log(`A subtração dos números é ${num1 - num2}`);
 console.log(`A multiplicação dos números é ${num1 * num2}`);
 console.log(`A divisão dos números é ${num1 / num2}`);
 console.log(`O resto da divisão dos números é ${num1 % num2}`);
+console.log(`O número elevado a potência do número 2 é ${num1 ** num2}`);
 //Executar -> node operadores-aritmeticos.js
