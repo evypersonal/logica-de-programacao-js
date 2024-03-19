@@ -185,6 +185,50 @@ Entradas (3): Valor atual da temperatura, escala atual da temperatura, escala pa
 
 Saidas (1): Valor convertido na escala de conversão
 
+### resolução
+~~~js
+const 
+    temperatura = parseFloat(window.prompt("Digite a temperatura que deseja converter: ")),
+    escalaAtual = window.prompt("Digite a escala atual dessa temperatura (F , C, K): ").toUpperCase(),
+    escalaFutura = window.prompt("Digite a escala que deseja converter (F, C, K): ").toUpperCase();
+~~~
+No código acima solicitei ao usuário 3 prompts, o 1º é necessário digitar um numero no qual será convertido, utilizei o método `parseFloat` para converter esse prompt de `String` para `Float` e atribui o resultado à variàvel `temperatura`;
+O 2º prompt solicitei ao usuário digitar a escala atual da temperatura em `F` , `C` ou `K`, logo após atribui à variável `escalaAtual`, utilizei também o método `.toUpperCase()`;
+No último prompt solicite ao usuário digitar a escala que deseja converter, também em `F` , `C` ou `K`, e atribui à variàvel `escalaFutura`.
+
+~~~js
+if (escalaAtual == "C" || escalaAtual == "c"){
+    if (escalaFutura == "F" || escalaFutura == "f"){
+        window.alert (`Temperatura a ser convertida: ${temperatura}°C --> Após conversão: ${((temperatura * 1.8) + 32).toFixed(2)}°F`);
+    }else {
+        window.alert(`Temperatura a ser convertida: ${temperatura}°C --> Após conversão: ${(temperatura + 273.15).toFixed(2)}K`);
+    }
+}
+~~~
+Nessa primeira condição utilizei o `if` para identificar se o input da variável `escalaAtual` é `C` indicando que a temperatura atual esta em Celsius, caso essa condição seja verdadeira, coloquei mais uma condição `if` para identificar se o input da variável `escalaFutura` foi `F` ou `K` fazendo com que faça a conversão de Celsius para Farenheit ou Kelvin.
+
+~~~js
+else if (escalaAtual == "F" || escalaAtual == "f"){
+    if (escalaFutura == "C" || escalaFutura == "c"){
+        window.alert(`Temperatura a ser convertida: ${temperatura}°F --> Após conversão: ${((temperatura - 32) / 1.8).toFixed(2)}°C`);
+    }else {
+        window.alert(`Temperatura a ser convertida: ${temperatura}°F --> Após conversão: ${((temperatura - 32) * 5/9 + 273.15).toFixed(2)}K`);
+    }
+}
+~~~
+Nessa segunda condição `if` ele irá identificar se o input da variável `escalaAtual` é `F`, determinando como Farenheit, e fazendo a conversão para Celsius ou Kelvin.
+
+~~~js
+else{
+    if (escalaFutura == "C" || escalaFutura == "c"){
+        window.alert(`Temperatura a ser convertida: ${temperatura}K --> Após conversão: ${(temperatura - 273.15).toFixed(2)}°C`);
+    }else {
+        window.alert(`Temperatura a ser convertida: ${temperatura}K --> Após conversão: ${((temperatura - 273.15) * 1.8 + 32).toFixed(2)}°F`);
+    }
+}
+~~~
+Por fim, nessa última condição `if` caso as duas anteriores for falsa, ele irá identificar o input da variável `escalaAtual` como `K` fazendo com que converta a temperatura de Kelvin para Celsius ou Farenheit.
+
 ### Fórmulas
 
 De | Para | Fórmula
