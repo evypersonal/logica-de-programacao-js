@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icons8-temperatura-96.png" type="image/x-icon">
+    <title>Conversor de Temperatura</title>
+</head>
+<body>
+    <main>
+        <form id="formulario">
+            <label for="temperatura">Digite o valor que deseja converter: <input type="number" name="temp"></label>
+            <br>
+            <label for="escalaAtual">Selecione a escala ATUAL desse valor: <select name="atual">
+                <option value="K">Kelvin (K)</option>
+                <option value="C" selected>Celsius (°C)</option>
+                <option value="F">Farenheit (°F)</option>
+            </select></label>
+            <br>
+            <label for="escalaFutura">Selecione a escala para qual deseja CONVERTER: <select name="futura">
+                <option value="K">Kelvin (K)</option>
+                <option value="C">Celsius (°C)</option>
+                <option value="F" selected>Farenheit (°F)</option>
+            </select></label>
+            <br>
+        </form> 
+        <button onclick="">Converter</button>
+    </main>
+<script src="desafio4.js"></script>
+</body>
+</html>
