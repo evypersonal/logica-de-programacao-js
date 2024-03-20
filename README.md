@@ -240,6 +240,23 @@ Farenheit | Kelvin | tK = (tF + 459.67) * 5/9
 Kelvin | Celsius | tC = tK + 273.15 
 Kelvin | Farenheit | tF = (tK - 273.15) * 9/5 + 32
 
-### Problema adicional
+# Comandos Git
 
-Como executar dois "programas" na mesma página?
+`git config --global --unset user.name` --> (remover o user da maquina)
+`git config --global --unset user.email` --> (remover o email da maquina)
+
+`git reset HEAD~` --> (desfaz o commit antes do push)
+
+`git config user.email "evellynmaria2015@outlook.com"` --> (configurar email pessoal)
+`git config user.name "evypersonal"` --> (configurar user pessoal)
+
+`git pull --rebase` --> (forçar a atualização do remoto para o local)
+`git push --force` --> (forçar o empurro do local para o remoto)
+
+`git add .` --> (adicionar na maquina virtual)
+`git commit -m "comentario"` --> (fazer commit)
+`git push origin main` --> (fazer o push para a main original)
+
+`git remote -v` --> (mostra qual repositorio remoto esta vinculado)
+
+git pull = git fetch (buscar) + git merge (mesclar)
