@@ -1,21 +1,21 @@
 // Desafio finalizado utilizando estrutura de decisão IF-ELSE e operadores de comparação
-function calculaIMC(){
-    
-    const peso = window.prompt('Digite seu peso: ');
-    const altura = window.prompt('Digite sua altura:');
+function calculaIMC(peso, altura){
+
     const imc = peso / (altura ** 2);
+    let mensagem;
     
     if(imc < 18.5){
-        window.alert(`IMC: ${imc.toFixed(2)} | Abaixo do peso`);
+        mensagem = `IMC: ${imc.toFixed(2)} | Abaixo do peso`;
     }else if(imc <= 24.9){
-        window.alert(`IMC: ${imc.toFixed(2)} | Peso normal`);
+        mensagem = `IMC: ${imc.toFixed(2)} | Peso normal`;
     }else if(imc <= 29.9){
-        window.alert(`IMC: ${imc.toFixed(2)} | Sobrepeso`);
+        mensagem = `IMC: ${imc.toFixed(2)} | Sobrepeso`;
     }else if(imc <= 34.9){
-        window.alert(`IMC: ${imc.toFixed(2)} | Obesidade Grau I`);
+        mensagem = `IMC: ${imc.toFixed(2)} | Obesidade Grau I`;
     }else if(imc <= 39.9){
-        window.alert(`IMC: ${imc.toFixed(2)} | Obesidade Grau II`);
+        mensagem = `IMC: ${imc.toFixed(2)} | Obesidade Grau II`;
     }else{
-        window.alert(`IMC: ${imc.toFixed(2)} | Obesidade Grau III`);
+        mensagem = `IMC: ${imc.toFixed(2)} | Obesidade Grau III`;
     }
+    return(mensagem);
 }
