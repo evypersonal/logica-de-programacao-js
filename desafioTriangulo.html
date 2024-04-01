@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do Triangulo</title>
+</head>
+<body>
+    <h1>Classificação do triângulo</h1>
+
+    <label for="ladoA">Digite o 1º valor:</label>
+    <input type="number" id="ladoA"><br>
+
+    <label for="ladoB">Digite o 2º valor:</label>
+    <input type="number" id="ladoB"><br>
+
+    <label for="ladoC">Digite o 3º valor:</label>
+    <input type="number" id="ladoC"><br>
+    <br>
+    <br>
+    <button type="button" id="btCalcular">Classificar</button>
+    <button type="reset" id="btReset">Limpar</button>
+    <div id="mostrarResultado"></div>
+    
+    <script src="desafioTriangulo.js"></script>
+
+    <script>
+        document.querySelector('#btCalcular').addEventListener('click', function (){
+            const
+            ladoA = document.querySelector('#ladoA').value,
+            ladoB = document.querySelector('#ladoB').value,
+            ladoC = document.querySelector('#ladoC').value,
+            resultado = comparador(ladoA, ladoB, ladoC);
+
+            console.log(resultado);
+        })
+    </script>
+</body>
+</html>
