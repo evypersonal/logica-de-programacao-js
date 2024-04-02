@@ -1,9 +1,9 @@
 // Desafio finalizado utilizando estrutura de decisão IF-ELSE e operadores de comparação
+function calculaIMC(peso, altura){
 
-function calculaIMC(peso, altura) {
-    const imc = peso / altura ** 2;
+    const imc = peso / (altura ** 2);
     let mensagem;
-
+    
     if(imc < 18.5){
         mensagem = `IMC: ${imc.toFixed(2)} | Abaixo do peso`;
     }else if(imc <= 24.9){
@@ -17,7 +17,5 @@ function calculaIMC(peso, altura) {
     }else{
         mensagem = `IMC: ${imc.toFixed(2)} | Obesidade Grau III`;
     }
-
-    return mensagem;
+    return(mensagem);
 }
-

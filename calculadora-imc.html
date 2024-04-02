@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+</head>
+<body>
+     <!-- Calculadora IMC -->
+     <h2>Calculadora IMC</h2>
+     <form action="" id="formIMC">
+         <label for="peso">Peso:</label>
+         <input type="number" id="peso" step="0.5" min="0" max="1000">
+         
+         <label for="altura">Altura:</label>
+         <input type="number" id="altura" step="0.01" min="0" max="3">
+         
+         <button type="button" id="btCalcIMC">Calcular IMC</button>
+         <button type="reset" id="btLimpaIMC">Limpar</button>
+     </form>
+ 
+     <div id="resultadoIMC"></div>
+     <!-- Fim da Calculadora IMC -->
+
+     <!-- função externa -->
+     <script src="desafio2.js"></script>
+
+     <script>
+        // add funcionalidades nos botões
+        document.querySelector('#btCalcIMC').addEventListener('click', function(){
+            const 
+                peso = document.querySelector('#peso').value,
+                altura = document.querySelector('#altura').value,
+                imc = calculaIMC(peso, altura);
+                console.log(imc);
+                document.querySelector('#resultadoIMC').innerHTML = imc;
+        });
+
+        document.querySelector('#btLimpaIMC').addEventListener('click', function () {
+            document.querySelector('#resultadoIMC').innerHTML = '';
+        });
+     </script>
+</body>
+</html>

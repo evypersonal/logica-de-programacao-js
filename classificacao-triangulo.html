@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação de um Triangulo</title>
+</head>
+<body>
+    <h1>Classificação do triângulo</h1>
+    
+    <!-- Formulário para preenchimento das informações -->
+    <form action="">
+        <label for="ladoA">Digite o 1º valor:</label>
+        <input type="number" min="0" id="ladoA"><br>
+    
+        <label for="ladoB">Digite o 2º valor:</label>
+        <input type="number" min="0" id="ladoB"><br>
+    
+        <label for="ladoC">Digite o 3º valor:</label>
+        <input type="number" min="0" id="ladoC"><br>
+        <br>
+        <br>
+        <!-- Botões para classificar e limpar o formulário -->
+        <button type="button" id="btClassificar">Classificar</button>
+        <button type="reset" id="btReset">Limpar</button>
+        <br>
+        <br>
+    </form>
+        <!-- Div vazia para exibição do resultado na própria página -->
+    <div id="mostrarResultado"></div>
+    
+        <!-- Script na própria página -->
+        <script>
+        // console.log (classificaTriangulo(10, 10, 100)); //teste no console
+
+        // inserindo funcionalidade nos botões
+        document.querySelector('#btClassificar').addEventListener('click', () => { // arrow function (função anônima)
+            // pegando os dados
+            const ladoA = Number(document.querySelector('#ladoA').value);
+            const ladoB = Number(document.querySelector('#ladoB').value);
+            const ladoC = Number(document.querySelector('#ladoC').value);
+
+            // enviando os dados
+            const classificacao = classificaTriangulo(ladoA, ladoB, ladoC);
+
+            // inserindo na div o retorno
+            document.querySelector('#mostrarResultado').innerHTML = classificacao;
+            // testando os tipos de variáveis
+            // console.log (typeof (ladoA), typeof(ladoB), typeof (ladoC), classificacao)
+
+            // funcionalidade do botão reset
+            document.querySelector('#btReset').addEventListener('click', () => {
+                document.querySelector('#mostrarResultado').innerHTML = '';
+            });
+        });
+
+        function classificaTriangulo(ladoA, ladoB, ladoC){
+            let msgErro;
+            let tipoTriangulo;
+            // teste do triângulo
+            if(ladoA < (ladoB + ladoC) && ladoB < (ladoA + ladoC) && ladoC < (ladoA + ladoB)){
+                // classificação do triangulo
+                if(ladoA === ladoB && ladoB === ladoC){
+                    tipoTriangulo = 'Equilátero';
+                }else if(ladoA === ladoB || ladoB === ladoC || ladoA === ladoC){
+                    tipoTriangulo = 'Isósceles';
+                }else{
+                    tipoTriangulo = 'Escaleno'
+                }
+                // fim da classificação
+            }else{
+                msgErro = 'A forma não é um triângulo!';
+            }   
+                return tipoTriangulo ?? msgErro;
+                // operador de coalescência "??" (retorna o valor válido antes do "undefined")
+        }
+            // fim do teste do triângulo
+    </script>
+
+<!-- Estilização -->
+<!-- 
+    
+ -->
+
+</body>
+</html>

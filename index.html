@@ -3,29 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMC</title>
+    <title>Desafios e Exercicios</title>
 </head>
 <body>
-    <h1>Programas</h1>
-    <!-- TODO: eliminar esses botões -->
-    <!-- <button type="button" onclick="calculaIMC()">Calculadora IMC</button> -->
-    <!-- <button type="button" onclick="converteTemperatura()">Conversor de Temperatura</button> -->
-    
-    <!-- Calculadora IMC -->
-    <h2>Calculadora IMC</h2>
-    <form action="" id="formIMC">
-        <label for="peso">Peso:</label>
-        <input type="number" id="peso" step="0.5" min="0" max="1000">
-        
-        <label for="altura">Altura:</label>
-        <input type="number" id="altura" step="0.01" min="0" max="3">
-        
-        <button type="button" id="btCalcIMC">Calcular IMC</button>
-        <button type="reset" id="btLimpaIMC">Limpar</button>
-    </form>
+    <h1>Desafios e Exercícios</h1>
 
-    <div id="resultadoIMC"></div>
-    <!-- Fim da Calculadora IMC -->
+    <h2>Exercícios</h2>
+
+    <nav>
+        <ul>
+            <li><a href="classificacao-triangulo.html" target="_blank">Classificando o Triângulo</a></li>
+            <li><a href="calculadora-imc.html" target="_blank">Classificando o IMC</a></li>
+
+        </ul>
+    </nav>
+   
 
     <!-- Conversor de Temperatura -->
 
@@ -53,25 +45,10 @@
     </form>
     <div id="resultadoTemp"></div>
 
-    <script src="desafio2-function.js"></script>
+    
     <script src="desafio3-function.js"></script>
     
     <script>
-        // Desafio2
-        document.querySelector('#btCalcIMC').addEventListener('click', function(){
-            const 
-                peso = document.querySelector('#peso').value,
-                altura = document.querySelector('#altura').value,
-                imc = calculaIMC(peso, altura);
-                console.log(imc);
-                document.querySelector('#resultadoIMC').innerHTML = imc;
-        });
-
-        document.querySelector('#btLimpaIMC').addEventListener('click', function () {
-            document.querySelector('#resultadoIMC').innerHTML = '';
-        });
-        // Fim do desafio2
-
         // Desafio3
         document.querySelector('#btConverte').addEventListener('click', function(){
             const
