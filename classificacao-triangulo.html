@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            list-style:none;
+            vertical-align:baseline;
+        }
+    </style>
     <title>Classificação de um Triangulo</title>
 </head>
 <body>
@@ -11,20 +20,19 @@
     <!-- Formulário para preenchimento das informações -->
     <form action="">
         <label for="ladoA">Digite o 1º valor:</label>
-        <input type="number" min="0" id="ladoA"><br>
+        <input type="number" min="0" id="ladoA">
+        <!-- O input precisa do ID para ser encontrado pelo javascript no DOM -->
     
         <label for="ladoB">Digite o 2º valor:</label>
-        <input type="number" min="0" id="ladoB"><br>
+        <input type="number" min="0" id="ladoB">
     
         <label for="ladoC">Digite o 3º valor:</label>
-        <input type="number" min="0" id="ladoC"><br>
-        <br>
-        <br>
+        <input type="number" min="0" id="ladoC">
+
         <!-- Botões para classificar e limpar o formulário -->
         <button type="button" id="btClassificar">Classificar</button>
         <button type="reset" id="btReset">Limpar</button>
-        <br>
-        <br>
+    
     </form>
         <!-- Div vazia para exibição do resultado na própria página -->
     <div id="mostrarResultado"></div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desconto</title>
+</head>
+<body>
+    <h1>Aplique seu desconto</h1>
+
+    <form action="">
+        <label for="valorTotal">Valor total da compra:</label>
+        <input type="number" id="valorTotal" min="0">
+
+        <label for="tipoDesconto">Selecione a forma de desconto:
+            <select name="tipoDesconto" id="tipoDesconto">
+                <option value="F">Funcionário</option>
+                <option value="C" selected>Cliente</option>
+                <option value="V">VIP</option>   
+            </select>
+        </label>
+        <button type="button" id="btCalcular">Calcular desconto</button>
+        <button type="reset">Limpar</button>
+    </form>
+    <div id="desconto"></div>
+
+    <script>
+        document.querySelector('#btCalcular').addEventListener('click', () => {
+            // coletando informações do input e atribuindo as variaveis
+            const valorTotal = Number(document.querySelector('#valorTotal').value);
+            const funcionario = document.querySelector('#F').value;
+            const cliente = document.querySelector('#C').value;
+            const vip = document.querySelector('#V').value;
+            // chamando a função para calculo
+            const desconto = calculoDesconto (valorTotal, funcionario, cliente, vip);
+            // imprimindo resultado
+            document.querySelector('#desconto').innerHTML = desconto;
+        })
+
+        function calculoDesconto (valorTotal,desconto){
+            let descontoTotal;
+            if(desconto === 'F'){
+                descontoTotal = valorTotal * 10 / 100
+            }return descontoTotal;
+        }
+        // desconto = valor * percentualDesconto / 100
+    
+    </script>
+</body>
+</html>
