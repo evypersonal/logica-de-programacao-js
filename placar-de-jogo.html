@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placar de Jogo</title>
+</head>
+<body>
+    <h1>Classificando o placar</h1>
+
+    <form>
+        <label for="time1">Time 1</label>
+        <input type="number" id="time1" min="0" max="30">
+        
+        <label for="time2">Time 2</label>
+        <input type="number" id="time2" min="0" max="30">
+
+        <button type="button" id="btPlacar">Classificar</button>
+
+        <button type="reset" id="btReset">Limpar</button>
+    </form>
+    <div id="resultado"></div>
+
+    <script>
+        document.querySelector('#btPlacar').addEventListener('click', () => {
+            const time1 = Number(document.querySelector('#time1').value);
+            const time2 = Number(document.querySelector('#time2').value);
+
+            const resultadoPlacar = classificaPlacar (time1, time2);
+
+            document.querySelector('#resultado').innerHTML = resultadoPlacar;
+
+        })
+        
+        document.querySelector('#btReset').addEventListener('click', () => {
+            document.querySelector('#resultado').innerHTML = '';
+        })
+
+        function classificaPlacar (time1, time2){
+            let resultadoPlacar;
+
+            if (time1 > time2){
+                resultadoPlacar = 'Vitória para time 1'
+            } else if (time2 > time1){
+                resultadoPlacar = 'Vitória para o time 2'
+            }else{
+                resultadoPlacar = 'Empate da partida'
+            } 
+            return resultadoPlacar;
+        }
+
+    </script>
+
+</body>
+</html>
