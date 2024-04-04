@@ -20,27 +20,34 @@
             </select>
         </label>
         <button type="button" id="btCalcular">Calcular desconto</button>
-        <button type="reset">Limpar</button>
+        <button type="reset" id="btReset">Limpar</button>
     </form>
     <div id="resultado"></div>
 
     <script>
         document.querySelector('#btCalcular').addEventListener('click', () =>{
-            let valorTotal = Number(document.querySelector('#valorTotal').value)
-            let desconto = Number(document.querySelector('#tipoDesconto').value);
+            const valorTotal = Number(document.querySelector('#valorTotal').value);
+            const desconto = document.querySelector('#tipoDesconto').value;
 
             let totalPagar = descontoAplicado(valorTotal, desconto)
 
             document.querySelector('#resultado').innerHTML = totalPagar;
         })
 
+        document.querySelector('#btReset').addEventListener('click', () => {
+            document.querySelector('#resultado').innerHTML = "";
+        })
+
         function descontoAplicado(valorTotal, desconto){
             let desconto_aplicado;
-            
+            let msgErro;
+            console.log(typeof'valorTotal, desconto')
             if (desconto === "F"){
-                desconto_aplicado = `Desconto de 10% para funcionário aplicado ${valorTotal *10/100}`;
+                let valorDescontoFuncionario = valorTotal *10/100;
+                desconto_aplicado = `Desconto de 10% para funcionário aplicado : ${valorDescontoFuncionario} . Valor total a pagar ${valorTotal - valorDescontoFuncionario}`;
             }else if (desconto === "V"){
-                desconto_aplicado = `Desconto de 5% para clientes VIP ${valorTotal *10/100}`;
+                let valorDescontoVip = valorTotal *5/100;
+                desconto_aplicado = `Desconto de 5% para clientes VIP aplicado: ${valorDescontoVip}. Valor total a pagar ${valorTotal - valorDescontoVip}`;
             }else{
                 desconto_aplicado = "Infelizmente não há desconto";
             }
