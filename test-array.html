@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <script>
+        // Array de String
+        let carros = ["Ford", "BMW", "Fiat", "VW"]
+
+        // Array de numeros
+        let ano = [2020, 2021, 2022, 2023]
+
+        // Alterando valor de elemento através do indice
+        carros [3] = "AlfaRomeo"
+
+        // Acrescentar um elemento à array
+        carros.push("Audi")
+
+        // Acrescentar uma array dentro de outra array
+        carros.push(ano)
+
+        // Remover um elemento && posso retornar esse elemento removido em uma variavel
+        let carro_removido = carros.pop()
+
+        // CONSULTAR cumprimento da array = propriedade 'length'
+        document.querySelector('#demo1').innerHTML = carros.length; 
+        // Indices é o cumprimento -1 (100 elementos - o último elemento terá como indice o 99)
+
+        // LOCALIZAR elemento através do indice '[number]'
+        document.querySelector('#demo2').innerHTML = carros;
+
+        // Imprimindo o elemento que foi retornado
+        document.querySelector('#demo3').innerHTML = carro_removido;
+        
+        // Localizar um elemento dentro da array
+        document.querySelector('#demo4').innerHTML = carros.includes("Ford")
+
+        
+
+
+
+    </script>
+</body>
+</html>

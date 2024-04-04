@@ -22,29 +22,30 @@
         <button type="button" id="btCalcular">Calcular desconto</button>
         <button type="reset">Limpar</button>
     </form>
-    <div id="desconto"></div>
+    <div id="resultado"></div>
 
     <script>
-        document.querySelector('#btCalcular').addEventListener('click', () => {
-            // coletando informações do input e atribuindo as variaveis
-            const valorTotal = Number(document.querySelector('#valorTotal').value);
-            const funcionario = document.querySelector('#F').value;
-            const cliente = document.querySelector('#C').value;
-            const vip = document.querySelector('#V').value;
-            // chamando a função para calculo
-            const desconto = calculoDesconto (valorTotal, funcionario, cliente, vip);
-            // imprimindo resultado
-            document.querySelector('#desconto').innerHTML = desconto;
+        document.querySelector('#btCalcular').addEventListener('click', () =>{
+            let valorTotal = Number(document.querySelector('#valorTotal').value)
+            let desconto = Number(document.querySelector('#tipoDesconto').value);
+
+            let totalPagar = descontoAplicado(valorTotal, desconto)
+
+            document.querySelector('#resultado').innerHTML = totalPagar;
         })
 
-        function calculoDesconto (valorTotal,desconto){
-            let descontoTotal;
-            if(desconto === 'F'){
-                descontoTotal = valorTotal * 10 / 100
-            }return descontoTotal;
+        function descontoAplicado(valorTotal, desconto){
+            let desconto_aplicado;
+            
+            if (desconto === "F"){
+                desconto_aplicado = `Desconto de 10% para funcionário aplicado ${valorTotal *10/100}`;
+            }else if (desconto === "V"){
+                desconto_aplicado = `Desconto de 5% para clientes VIP ${valorTotal *10/100}`;
+            }else{
+                desconto_aplicado = "Infelizmente não há desconto";
+            }
+            return desconto_aplicado;
         }
-        // desconto = valor * percentualDesconto / 100
-    
     </script>
 </body>
 </html>
