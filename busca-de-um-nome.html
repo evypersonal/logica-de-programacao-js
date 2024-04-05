@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de um nome</title>
+</head>
+<body>
+    <h1>Verifique se o nome que deseja está na lista:</h1>
+
+    <form action="">
+        <label for="nomes">Digite 10 nomes que deseja armazenar:</label>
+        <input type="text" id="nomes">
+
+        <button type="button" id="btSalvar">Salvar</button>
+        <button type="reset" id="btReset">Resetar</button>
+    </form>
+    <div id="mostraResultado"></div>
+
+    <!-- <script>
+        document.querySelector('#btSalvar').addEventListener('click', ()=>{
+            const nome = document.querySelector('#nomes').value;
+            const contagem = 0;
+            let nomes = []
+            while (contagem <= 10){
+                let nomes = nomes.push(nome)
+                contagem + 1;
+            }
+            return console.log(nomes)
+
+            const resultado = armazenaNomes (contagem, nome);
+
+            document.querySelector('#mostraResultado').innerHTML = resultado;
+        })
+
+        function armazenaNomes (contagem, nome){
+            let nomes = [];
+            const contagem = 0;
+
+            while (contagem <= 10){
+                nomes.push(nome);
+                contagem + 1;
+            }
+            return nomes
+        }
+
+    </script> -->
+
+</body>
+</html>
