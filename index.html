@@ -52,21 +52,20 @@
     
     <script>
         // Desafio3
-        document.querySelector('#btConverte').addEventListener('click', function(){
+        document.querySelector('#btConverte').addEventListener('click', () =>{
             const
-                temperatura = document.querySelector('#temperatura').value,
-                escalaAtual = document.querySelector('#escalaAtual').value,
-                escalaFutura = document.querySelector('#escalaFutura').value,
-                resultado = converteTemperatura(temperatura,escalaAtual,escalaFutura);
-                console.log(resultado);
-
-                document.querySelector('#resultadoTemp').innerHTML = `Temperatura convertida: ${conversao.tempConvertida + conversao.escalaFutura}`;
+            temperatura = Number(document.querySelector('#temperatura').value);
+            escalaAtual = document.querySelector('#escalaAtual').value;
+            escalaFutura = document.querySelector('#escalaFutura').value;
+            resultado = converteTemperatura(temperatura, escalaAtual, escalaFutura);
+            
+            document.querySelector('#resultadoTemp').innerHTML = `Temperatura convertida: ${temperatura} ---> Após conversão: ${resultado}`;
         });
-        document.querySelector('#btLimpaTemp').addEventListener('click', function () {
-            document.querySelector('#resultadoTemp').innerHTML = ''
-        })
-
-    </script>
+        // document.querySelector('#btLimpaTemp').addEventListener('click', function () {
+            //     document.querySelector('#resultadoTemp').innerHTML = ''
+            // })
+            
+            </script>
 
 </body>
 </html>

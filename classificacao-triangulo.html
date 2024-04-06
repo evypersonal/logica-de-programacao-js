@@ -15,31 +15,35 @@
     <title>Classificação de um Triangulo</title>
 </head>
 <body>
-    <h1>Classificação do triângulo</h1>
+    <div id="conteudo">
+
+        <h1>Classificação do triângulo</h1>
         <!-- Formulário para preenchimento das informações -->
-    <form action="">
-        <label for="ladoA">Lado A</label>
-        <input type="number" min="0" id="ladoA">
-        <!-- O input precisa do ID para ser encontrado pelo javascript no DOM -->
-        
-        <label for="ladoB">Lado B</label>
-        <input type="number" min="0" id="ladoB">
-        
-        <label for="ladoC">Lado C</label>
-        <input type="number" min="0" id="ladoC">
-        
-        <!-- Botões para classificar e limpar o formulário -->
-        <button type="button" id="btClassificar">Classificar</button>
-        <button type="reset" id="btReset">Limpar</button>
+        <form action="">
+            <label for="ladoA">Lado A</label>
+            <input type="number" min="0" id="ladoA">
+            <!-- O input precisa do ID para ser encontrado pelo javascript no DOM -->
+            
+            <label for="ladoB">Lado B</label>
+            <input type="number" min="0" id="ladoB">
+            
+            <label for="ladoC">Lado C</label>
+            <input type="number" min="0" id="ladoC">
+            
+            <!-- Botões para classificar e limpar o formulário -->
+            <button type="button" id="btClassificar">Classificar</button>
+            <button type="reset" id="btReset">Limpar</button>
         </form>
+        <div id="mostrarResultado"></div>
         <!-- Div vazia para exibição do resultado na própria página -->
-    
+    </div>
+        
         
         <!-- Script na própria página -->
         <script>
-        // console.log (classificaTriangulo(10, 10, 100)); //teste no console
-
-        // inserindo funcionalidade nos botões
+            // console.log (classificaTriangulo(10, 10, 100)); //teste no console
+            
+            // inserindo funcionalidade nos botões
         document.querySelector('#btClassificar').addEventListener('click', () => { // arrow function (função anônima)
             // pegando os dados
             const ladoA = Number(document.querySelector('#ladoA').value);
