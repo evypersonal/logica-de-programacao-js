@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de um nome</title>
+</head>
+<body>
+    <h1>Busca de um nome</h1>
+
+    <form action="">
+        <label for="nomeInclusao">Digite 10 nomes que deseja armazenar:</label>
+        <input type="text" id="nomeInclusao"  required autofocus>
+
+        <button type="reset" id="btCadastrar">Cadastrar</button>
+
+        <button type="button" id="btMostrar">Mostrar</button>
+    </form>
+    <div id="resultado"></div>
+
+    <script>
+
+        let nomes = []; //array vazio
+
+
+        document.querySelector('#btCadastrar').addEventListener('click', () => {
+            if (nomes.length < 10){
+                nomes.push(document.querySelector('#nomeInclusao').value);
+            }else{
+                // window.alert('Número atingido');
+                if(nomes.includes(document.querySelector('#nomeInclusao').value)){
+                    console.log('achei');
+                } else{
+                    console.log('não achei');
+                }
+            }
+        })
+
+        document.querySelector('#btMostrar').addEventListener('click', () => {
+            for (let i = 0; i < nomes.length; i++){
+
+               document.querySelector('#resultado').innerHTML += nomes [i] + '<br>';
+            }
+        })
+
+        // TODO:
+        // 1. Quando clicar no botão cadastrar, limpar o input; 👍
+        // 2. Limitar a 10 nomes para cadastrar👍
+        // 3. Após o 10º nome, o campo permite buscar um nome no array;
+        // 4. Exibir se o nome foi encontrado
+
+    </script>
+
+</body>
+</html>
