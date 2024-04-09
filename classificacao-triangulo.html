@@ -3,41 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        * {
-            margin:0;
-            padding:0;
-            list-style:none;
-            vertical-align:baseline;
-        }
-    </style>
     <title>Classificação de um Triangulo</title>
 </head>
 <body>
-    <div id="conteudo">
+    <a href="index.html">↩ Home </a>
+    <h1 class="titulo-pagina">Classificação do triângulo</h1>
+    
+    <main>
+        <div id="conteudo">
+            
+            <!-- Formulário para preenchimento das informações -->
+            <form action="">
+                
+                <div class="elementos-em-linha">
+                    
+                    <div class="controle-form">
+                        <label for="ladoA">Lado A</label>
+                        <input type="number" min="0" id="ladoA">
+                </div>
+                <!-- O input precisa do ID para ser encontrado pelo javascript no DOM -->
+                
+                <div class="controle-form">
+                    <label for="ladoB">Lado B</label>
+                    <input type="number" min="0" id="ladoB">
+                </div>
+                
+                <div class="controle-form">
+                    <label for="ladoC">Lado C</label>
+                    <input type="number" min="0" id="ladoC">
+                </div>
+                <!-- Botões para classificar e limpar o formulário -->
+            </div>
 
-        <h1>Classificação do triângulo</h1>
-        <!-- Formulário para preenchimento das informações -->
-        <form action="">
-            <label for="ladoA">Lado A</label>
-            <input type="number" min="0" id="ladoA">
-            <!-- O input precisa do ID para ser encontrado pelo javascript no DOM -->
+            <div class="botoes">
+                <button type="button" id="btClassificar">Classificar</button>
+                <button type="reset" id="btReset">Limpar</button>
+            </div>
             
-            <label for="ladoB">Lado B</label>
-            <input type="number" min="0" id="ladoB">
-            
-            <label for="ladoC">Lado C</label>
-            <input type="number" min="0" id="ladoC">
-            
-            <!-- Botões para classificar e limpar o formulário -->
-            <button type="button" id="btClassificar">Classificar</button>
-            <button type="reset" id="btReset">Limpar</button>
         </form>
         <div id="mostrarResultado"></div>
         <!-- Div vazia para exibição do resultado na própria página -->
-    </div>
-        
+        </div>
+    </main>
+    
         
         <!-- Script na própria página -->
         <script>
