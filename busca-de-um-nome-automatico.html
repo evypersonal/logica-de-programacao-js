@@ -4,50 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busca de um nome</title>
+
+    <style>
+        .oculto{
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Busca de um nome</h1>
 
     <form action="">
-        <label for="nomeInclusao">Digite 10 nomes que deseja armazenar:</label>
-        <input type="text" id="nomeInclusao"  required autofocus>
+        <label for="nome">Digite 10 nomes que deseja armazenar:</label>
+        <input type="text" id="nome"  required autofocus>
 
         <button type="reset" id="btCadastrar">Cadastrar</button>
-
-        <button type="button" id="btMostrar">Mostrar</button>
+        <button type="button" id="btPesquisar" class="oculto">Pesquisar</button>
     </form>
     <div id="resultado"></div>
 
     <script>
+        
+        // adicionando funcionalidades à tecla 'Enter'
 
         let nomes = []; //array vazio
+        // key code table javascript /toptal (tabela de teclas)
+        document.addEventListener('keydown', (evento) => {
+            if (evento.key === 'Enter'){
+                // previne o evento do Enter (necessário para 'anular' sua função de origem)
+                evento.preventDefault()
 
-
-        document.querySelector('#btCadastrar').addEventListener('click', () => {
-            if (nomes.length < 10){
-                nomes.push(document.querySelector('#nomeInclusao').value);
-            }else{
-                // window.alert('Número atingido');
-                if(nomes.includes(document.querySelector('#nomeInclusao').value)){
-                    console.log('achei');
-                } else{
-                    console.log('não achei');
+                if (nomes.length < 10){
+                    document.querySelector('#btCadastrar').click();
+                }else{
+                    document.querySelector('#btPesquisar').click();
                 }
             }
         })
 
-        document.querySelector('#btMostrar').addEventListener('click', () => {
-            for (let i = 0; i < nomes.length; i++){
+        // Adicionando funcionalidades ao botao 'Cadastrar'
+        document.querySelector('#btCadastrar').addEventListener('click', () => {
+            nomes.push(document.querySelector('#nome').value);
+            // Será executaddo após atingir os 10 inputs de nome
+            if (nomes.length === 10){
+                // trocar o texto de inclusão para pesquisa
+                document.querySelector('label[for = "nome"]').innerHTML = 'Nome para pesquisar:';
+                // irá ocultar o botão cadastrar
+                document.querySelector('#btCadastrar').classList.add('oculto');
+                // irá desocultar o botão pesquisar
+                document.querySelector('#btPesquisar').classList.remove('oculto');
 
-               document.querySelector('#resultado').innerHTML += nomes [i] + '<br>';
             }
         })
+
+        // Adicionando funcionalidade ao botão 'Pesquisar'
+        document.querySelector('#btPesquisar').addEventListener('click', () => {
+            const nomeBuscado = document.querySelector('#nome').value;
+            
+            // condição alternativa: (nomes.indexOf(nomeBuscado >= 0)) ele busca através do indice 
+            if (nomes.includes(nomeBuscado)){
+                document.querySelector('#resultado').innerHTML = `ACHEI na posição: ${nomes.indexOf(nomeBuscado)}, "${nomes[nomes.indexOf(nomeBuscado)]}"`;
+            }else {
+                document.querySelector('#resultado').innerHTML = 'NÃO ACHEI';
+            }
+        })
+
+
 
         // TODO:
         // 1. Quando clicar no botão cadastrar, limpar o input; 👍
         // 2. Limitar a 10 nomes para cadastrar👍
-        // 3. Após o 10º nome, o campo permite buscar um nome no array;
-        // 4. Exibir se o nome foi encontrado
+        // 3. Após o 10º nome, o campo permite buscar um nome no array;👍
+        // 4. Exibir se o nome foi encontrado👍
+        // 5. Incluir funcionalidades à tecla 'Enter'👍
 
     </script>
 
