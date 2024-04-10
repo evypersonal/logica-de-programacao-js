@@ -6,7 +6,7 @@
 
 body{
     font-family: 'Ubuntu', sans-serif;
-    background-color: beige;
+    background-color: #f5f5dc;
 }
 
 main{
@@ -14,7 +14,7 @@ main{
     /* border-width: 1px; grossura da borda */
     /* border-style: solid; tipo da borda */
     /* border-color: black;cor da borda */
-    border: 1px solid black; /* Shorthand para a borda*/
+    border: 1px solid #000000; /* Shorthand para a borda*/
     margin: auto;
     padding: 2rem; /*preenchimento*/
     background-color: #fff;
@@ -35,6 +35,8 @@ main{
     gap: 1rem;
 }
 
+/* Estilizando os botões universalmente */
+
 .botoes{
     margin: 2rem 0;
     display: flex;
@@ -45,19 +47,73 @@ main{
 button{
     width: 100%;
     line-height: 2.2; /*altura da linha*/
+    border: none;
+    border-radius: 4px;
 }
+
+button:hover{ /*geral em todos os botões*/
+    cursor: pointer;  /*'mãozinha no botão'*/
+}
+
+button:active{ /*pseudo-classe do click no botão*/
+    box-shadow: inset 2px 2px 2px #333333;
+}
+
+
+
+/* Estilizando o botão 'Classificar' */
+#btClassificar{
+    background-color: #2078ec; /*cor de fundo*/
+    color: #ffffff; /*cor do texto*/ 
+    
+}
+
+#btClassificar:hover { /*pseudo-classe de sobrevoo no botão (interação no elemento)*/
+    background-color: #2078ec;
+}
+
+#btClassificar:active{
+    background-color: #1d6dd6;
+}
+
+/* Estilizando o botão 'limpar' */
+
+#btReset{
+    background-color: #e85391;
+    color: #ffffff;
+}
+
+/* Sobrevoo no botão */
+#btReset:hover{
+    background-color: #e85391;
+}
+
+/* Click do botão / ficará um pouco mais escuro */
+#btReset:active{
+    background-color: #e82375; 
+}
+
+/* Estilizando os 'Inputs' */
 
 input{
     width: 100%;
     line-height: 2.2;
+    border-radius: 4px;
+    border: 1px solid #000000;
+    padding-left: 8px; /*padding do cursor*/
+    margin-top: 6px; /*distância entre o input e o texto acima*/
+    /* outline: none; */
+
 }
 
+/* Estilizando a div do 'Resultado' */
 #mostrarResultado{
-    border: 1px solid black;
+    border: 1px solid #000000;
     height: 2rem;
     margin: 2rem 0 0 0;
     border-radius: 4px;
+    display: flex;
+    flex-direction: row; /*estabelece a direção do alinhamento*/
+    justify-content: center; /* centraliza no eixo horizontal/ principal*/ 
+    align-items: center; /*alinha no eixo vertical/ secundário*/
 }
-
-
-
