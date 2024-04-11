@@ -35,6 +35,10 @@ main{
     gap: 1rem;
 }
 
+.controle-form{
+    width: 100%;
+}
+
 /* Estilizando os botões universalmente */
 
 .botoes{
@@ -62,34 +66,34 @@ button:active{ /*pseudo-classe do click no botão*/
 
 
 /* Estilizando o botão 'Classificar' */
-#btClassificar{
+.acao-positiva{
     background-color: #2078ec; /*cor de fundo*/
     color: #ffffff; /*cor do texto*/ 
     
 }
 
-#btClassificar:hover { /*pseudo-classe de sobrevoo no botão (interação no elemento)*/
+.acao-positiva:hover { /*pseudo-classe de sobrevoo no botão (interação no elemento)*/
     background-color: #2078ec;
 }
 
-#btClassificar:active{
+.acao-positiva:active{
     background-color: #1d6dd6;
 }
 
 /* Estilizando o botão 'limpar' */
 
-#btReset{
+.acao-negativa{
     background-color: #e85391;
     color: #ffffff;
 }
 
 /* Sobrevoo no botão */
-#btReset:hover{
+.acao-negativa:hover{
     background-color: #e85391;
 }
 
 /* Click do botão / ficará um pouco mais escuro */
-#btReset:active{
+.acao-negativa:active{
     background-color: #e82375; 
 }
 

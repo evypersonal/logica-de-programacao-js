@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Conversor de Temperatura</title>
+</head>
+<body>
+    <!-- Conversor de Temperatura -->
+    <a href="index.html">↩ Home </a>
+    <h1 class="titulo-pagina">Conversor de temperatura</h1>
+
+    <main>
+        <form action="" id="formConv">
+            <div class="elementos-em-linha">
+                <div class="controle-form">
+                    <label for="temperatura">Temperatura:</label>
+                    <input type="number" id="temperatura" step="0.01" min="0" max="1000">
+                </div>
+        
+                <div class="controle-form">
+                    <label for="escalaAtual">Selecione a escala atual:</label>
+                    <select id="escalaAtual">
+                        <option value="C" selected>Celsius</option>
+                        <option value="F">Fahrenheit</option>
+                        <option value="K">Kelvin</option>
+                    </select>
+                </div>
+
+                <div class="controle-form">
+                    <label for="escalaFutura">Selecione para qual escala deseja converter:</label>
+                    <select id="escalaFutura">
+                        <option value="C" selected>Celsius</option>
+                        <option value="F">Fahrenheit</option>
+                        <option value="K">Kelvin</option>
+                    </select>
+                </div>
+        
+            </div>
+
+            <div class="botoes">
+                <button type="button" id="btConverte" class="acao-positiva">Converter Temperatura</button>
+                <button type="reset" id="btReset" class="acao-negativa">Limpar</button>
+            </div>
+        </form>
+        <div id="mostrarResultado"></div>
+    </main>
+
+    
+    <script src="desafio3-function.js"></script>
+    
+    <script>
+        // Desafio3
+        document.querySelector('#btConverte').addEventListener('click', () =>{
+            const
+            temperatura = Number(document.querySelector('#temperatura').value);
+            escalaAtual = document.querySelector('#escalaAtual').value;
+            escalaFutura = document.querySelector('#escalaFutura').value;
+            resultado = converteTemperatura(temperatura, escalaAtual, escalaFutura);
+            
+            document.querySelector('#mostrarResultado').innerHTML = `${resultado}`;
+        });
+
+        document.querySelector('#btReset').addEventListener('click', () =>{
+            document.querySelector('#mostrarResultado').innerHTML = '';
+        })
+            
+    </script>
+</body>
+</html>

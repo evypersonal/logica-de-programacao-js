@@ -4,22 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Placar de Jogo</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Classificando o placar</h1>
+    <a href="index.html">↩ Home </a>
+    <div class="titulo-pagina">
+        <h1>Classificando o placar</h1>
+    </div>
 
-    <form>
-        <label for="time1">Time 1</label>
-        <input type="number" id="time1" min="0" max="30">
-        
-        <label for="time2">Time 2</label>
-        <input type="number" id="time2" min="0" max="30">
+    <main>
+        <form>
+            <div class="elementos-em-linha">
+                <div class="controle-form">
+                    <label for="time1">Time 1</label>
+                    <input type="number" id="time1" min="0" max="30">
+                </div>
+                
+                <div class="controle-form">
+                    <label for="time2">Time 2</label>
+                    <input type="number" id="time2" min="0" max="30">
+                </div>
+            </div>
+    
+            <div class="botoes">
+                <button type="button" id="btPlacar" class="acao-positiva">Classificar</button>
+                <button type="reset" id="btReset" class="acao-negativa">Limpar</button>
+            </div>
 
-        <button type="button" id="btPlacar">Classificar</button>
-
-        <button type="reset" id="btReset">Limpar</button>
-    </form>
-    <div id="resultado"></div>
+        </form>
+        <div id="mostrarResultado"></div>
+    </main>
 
     <script>
         document.querySelector('#btPlacar').addEventListener('click', () => {
@@ -28,12 +43,12 @@
 
             const resultadoPlacar = classificaPlacar (time1, time2);
 
-            document.querySelector('#resultado').innerHTML = resultadoPlacar;
+            document.querySelector('#mostrarResultado').innerHTML = resultadoPlacar;
 
         })
         
         document.querySelector('#btReset').addEventListener('click', () => {
-            document.querySelector('#resultado').innerHTML = '';
+            document.querySelector('#mostrarResultado').innerHTML = '';
         })
 
         function classificaPlacar (time1, time2){

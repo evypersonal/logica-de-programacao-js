@@ -1,5 +1,5 @@
 function converteTemperatura(temperatura, escalaAtual, escalaFutura){
-    let msgTemp, msgErro;
+    let msgTemp;
 
     
     
@@ -15,9 +15,9 @@ function converteTemperatura(temperatura, escalaAtual, escalaFutura){
             }else if (escalaFutura === "K"){
              msgTemp =`Temperatura a ser convertida: ${temperatura}°C --> Após conversão: ${(temperatura + 273.15).toFixed(2)} K`;
             }else if (escalaFutura === "C"){
-                msgErro = `Temperatura a ser convertida: ${temperatura}°C --> Escolha outra escala para conversão!`;
+               msgTemp = `Temperatura a ser convertida: ${temperatura}°C --> Escolha outra escala para conversão!`;
             }else{
-                msgErro = `A escala de CONVERSÃO não existe ou não esta disponivel nesse programa.`;
+               msgTemp = `A escala de CONVERSÃO não existe ou não esta disponivel nesse programa.`;
             }
         }else if (escalaAtual === "F"){
             if (escalaFutura === "C"){
@@ -25,9 +25,9 @@ function converteTemperatura(temperatura, escalaAtual, escalaFutura){
             }else if (escalaFutura === "K"){
              msgTemp = `Temperatura a ser convertida: ${temperatura}°F --> Após conversão: ${((temperatura - 32) * 5/9 + 273.15).toFixed(2)} K`;
             }else if (escalaFutura === "F"){
-                msgErro = `Temperatura a ser convertida: ${temperatura}°F --> Escolha outra escala para conversão!`;
+               msgTemp = `Temperatura a ser convertida: ${temperatura}°F --> Escolha outra escala para conversão!`;
             }else{
-                msgErro = `A escala de CONVERSÃO não existe ou não esta disponivel nesse programa.`;
+               msgTemp = `A escala de CONVERSÃO não existe ou não esta disponivel nesse programa.`;
             }
         }else if(escalaAtual === "K"){
             if (escalaFutura === "C"){
@@ -35,17 +35,15 @@ function converteTemperatura(temperatura, escalaAtual, escalaFutura){
             }else if (escalaFutura === "F"){
              msgTemp = `Temperatura a ser convertida: ${temperatura} K --> Após conversão: ${((temperatura - 273.15) * 1.8 + 32).toFixed(2)}°F`;
             }else if (escalaFutura === "K"){
-                msgErro = `Temperatura a ser convertida: ${temperatura} K --> Escolha outra escala para conversão!`;
+               msgTemp = `Temperatura a ser convertida: ${temperatura} K --> Escolha outra escala para conversão!`;
             }else{
-                msgErro = `A escala de CONVERSÃO não existe ou não esta disponivel nesse programa.`;
+               msgTemp = `A escala de CONVERSÃO não existe ou não esta disponivel nesse programa.`;
             }
         }else{
-            msgErro = `A escala ATUAL não existe ou não esta disponivel nesse programa.`;
+           msgTemp = `A escala ATUAL não existe ou não esta disponivel nesse programa.`;
         }
     }else{
-            msgErro = 'Temperatura digitada não é um número! \nAtualize a página!';
+           msgTemp = 'Temperatura digitada não é um número! \nAtualize a página!';
     }
-    return { 
-        msgTemp, msgErro
-    }
+    return  [msgTemp]
 }

@@ -12,60 +12,14 @@
 
     <nav>
         <ul>
-            <li><a href="classificacao-triangulo.html" target="_blank">Classificando o Triângulo</a></li>
-            <li><a href="calculadora-imc.html" target="_blank">Classificando o IMC</a></li>
-            <li><a href="desconto.html" target="_blank">Desconto para funcionário</a></li>
-            <li><a href="placar-de-jogo.html" target="_blank">Placar de jogo</a></li>
+            <li><a href="classificacao-triangulo.html">Classificando o Triângulo</a></li>
+            <li><a href="calculadora-imc.html">Classificando o IMC</a></li>
+            <li><a href="desconto.html">Desconto para funcionário</a></li>
+            <li><a href="placar-de-jogo.html">Placar de jogo</a></li>
+            <li><a href="converte-temperatura.html">Conversor de Temperatura</a></li>
 
         </ul>
     </nav>
-   
-
-    <!-- Conversor de Temperatura -->
-
-    <h2>Conversor de temperatura</h2>
-    <form action="" id="formConv">
-        <label for="temperatura">Temperatura:</label>
-        <input type="number" id="temperatura" step="0.01" min="0" max="1000">
-
-        <label for="escalaAtual">Selecione a escala atual:</label>
-        <select id="escalaAtual">
-            <option value="C" selected>Celsius</option>
-            <option value="F">Fahrenheit</option>
-            <option value="K">Kelvin</option>
-        </select>
-
-        <label for="escalaFutura">Selecione para qual escala deseja converter:</label>
-        <select id="escalaFutura">
-            <option value="C" selected>Celsius</option>
-            <option value="F">Fahrenheit</option>
-            <option value="K">Kelvin</option>
-        </select>
-
-        <button type="button" id="btConverte">Converter Temperatura</button>
-        <button type="reset" id="btLimpaConverte">Limpar</button>
-    </form>
-    <div id="resultadoTemp"></div>
-
-    
-    <script src="desafio3-function.js"></script>
-    
-    <script>
-        // Desafio3
-        document.querySelector('#btConverte').addEventListener('click', () =>{
-            const
-            temperatura = Number(document.querySelector('#temperatura').value);
-            escalaAtual = document.querySelector('#escalaAtual').value;
-            escalaFutura = document.querySelector('#escalaFutura').value;
-            resultado = converteTemperatura(temperatura, escalaAtual, escalaFutura);
-            
-            document.querySelector('#resultadoTemp').innerHTML = `Temperatura convertida: ${temperatura} ---> Após conversão: ${resultado}`;
-        });
-        // document.querySelector('#btLimpaTemp').addEventListener('click', function () {
-            //     document.querySelector('#resultadoTemp').innerHTML = ''
-            // })
-            
-            </script>
 
 </body>
 </html>

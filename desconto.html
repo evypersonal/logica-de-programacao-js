@@ -3,26 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
     <title>Desconto</title>
 </head>
 <body>
-    <h1>Aplique seu desconto</h1>
+    <a href="index.html">↩ Home </a>
+    <div class="titulo-pagina">
+        <h1>Aplique seu desconto</h1>
+    </div>
 
-    <form action="">
-        <label for="valorTotal">Valor total da compra:</label>
-        <input type="number" id="valorTotal" min="0">
+    <main>
+        <div class="controle-form">
+            <form action="">
+                <div class="elementos-em-linha">
+                    <label for="valorTotal">Valor total da compra:</label>
+                    <input type="number" id="valorTotal" min="0">
+                </div>
+                
+                <div class="elementos-em-linha">
+                    <label for="tipoDesconto">Selecione a forma de desconto:
+                        <select name="tipoDesconto" id="tipoDesconto">
+                            <option value="F">Funcionário</option>
+                            <option value="C" selected>Cliente</option>
+                            <option value="V">VIP</option>   
+                        </select>
+                    </label>
+                </div>
 
-        <label for="tipoDesconto">Selecione a forma de desconto:
-            <select name="tipoDesconto" id="tipoDesconto">
-                <option value="F">Funcionário</option>
-                <option value="C" selected>Cliente</option>
-                <option value="V">VIP</option>   
-            </select>
-        </label>
-        <button type="button" id="btCalcular">Calcular desconto</button>
-        <button type="reset" id="btReset">Limpar</button>
-    </form>
-    <div id="resultado"></div>
+                <div class="botoes">
+                    <button type="button" id="btCalcular" class="acao-positiva">Calcular desconto</button>
+                    <button type="reset" id="btReset" class="acao-negativa">Limpar</button>
+                </div>
+            </form>
+            <div id="mostrarResultado"></div>
+        </div>
+    </main>
 
     <script>
         document.querySelector('#btCalcular').addEventListener('click', () =>{
@@ -31,11 +47,11 @@
 
             let totalPagar = descontoAplicado(valorTotal, desconto)
 
-            document.querySelector('#resultado').innerHTML = totalPagar;
+            document.querySelector('#mostrarResultado').innerHTML = totalPagar;
         })
 
         document.querySelector('#btReset').addEventListener('click', () => {
-            document.querySelector('#resultado').innerHTML = "";
+            document.querySelector('#mostrarResultado').innerHTML = "";
         })
 
         function descontoAplicado(valorTotal, desconto){
