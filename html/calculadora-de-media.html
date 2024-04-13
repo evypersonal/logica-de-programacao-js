@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/icons8-matemática-16.png" type="image/x-icon">
+    <title>Calculadora de média</title>
+</head>
+<body>
+    <a href="../index.html">↩Home</a>
+    <div class="titulo-pagina">
+        <h1>Calcule sua média de notas</h1>
+    </div>
+
+    <main>
+        <form action="">
+            <div class="elementos-em-linha">
+                <div class="controle-form">
+                    <label for="nota1">Nota 1:</label>
+                    <input type="number" id="nota1">
+                </div>
+                
+                <div class="controle-form">
+                    <label for="nota2">Nota 2:</label>
+                    <input type="number" id="nota2">
+                </div>
+                
+                <div class="controle-form">
+                    <label for="nota3">Nota 3:</label>
+                    <input type="number" id="nota3">
+                </div>
+                
+            </div>
+            <div class="botoes">
+                <button type="button" class="acao-positiva" id="btCalcular">Calcular</button>
+                <button type="reset" class="acao-negativa" id="btLimpar">Limpar</button>
+            </div>
+                
+            <div id="mostrarResultado"></div>
+        </form>
+
+    </main>
+
+    <script src="../js/desafio1.js"></script>
+
+    <script>
+        document.querySelector('#btCalcular').addEventListener('click', () =>{
+            const nota1 = Number(document.querySelector('#nota1').value);
+            const nota2 = Number(document.querySelector('#nota2').value);
+            const nota3 = Number(document.querySelector('#nota3').value);
+
+            const resultado = calculaMedia(nota1, nota2, nota3);
+
+            document.querySelector('#mostrarResultado').innerHTML = resultado;
+        })
+
+        document.querySelector('#btLimpar').addEventListener('click', () => {
+                document.querySelector('#mostrarResultado').innerHTML = '';
+            });
+    </script>
+</body>
+</html>
