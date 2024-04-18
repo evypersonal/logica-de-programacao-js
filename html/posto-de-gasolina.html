@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posto de Gasolina</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <a href="../index.html">↩Home</a>
+    <h1 class="titulo-pagina">Obtenha seu desconto</h1>
+
+    <main>
+        <form action="">
+            <div class="elementos-em-linha">
+                <div class="controle-form">
+                    <label for="litros">Digite a quantidade de Litros:</label>
+                    <input type="number" id="litros" min="0" step="0.01">
+                </div>
+                
+                <div class="controle-form">
+                    <label for="tipoDesconto">Selecione o tipo de Combustivel</label>
+                    <select name="tipoCombustivel" id="tipoCombustivel">
+                        <option value="G">[G] Gasolina</option>
+                        <option value="A">[A] Alcool</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+        <div class="botoes">
+            <button type="button" class="acao-positiva" id="btCalcular">Calcular</button>
+            <button type="reset" class="acao-negativa" id="btReset">Limpar</button>
+        </div>
+        <div id="mostrarResultado"></div>
+    </main>
+
+    <script>
+        document.querySelector('#btCalcular').addEventListener('click', () => {
+            const quantidadeLitros = Number(document.querySelector('#litros').value);
+            const tipoCombustivel = document.querySelector('#tipoCombustivel').value;
+
+            const resultado = calculadoraDesconto(quantidadeLitros, tipoCombustivel);
+
+            document.querySelector('#mostrarResultado').innerHTML = resultado;
+        })
+
+        function calculadoraDesconto(quantidadeLitros, tipoCombustivel){
+            let msg;
+            const descontoAlcool20 = quantidadeLitros *3/100,
+            descontoAlcool21 = quantidadeLitros *5/100 ,
+            descontoGasolina20 = quantidadeLitros *4/100,
+            descontoGasolina21 = quantidadeLitros *6/100;
+
+
+            if ((quantidadeLitros <= 20) && (tipoCombustivel === "A")){
+                 msg = descontoAlcool20 * 2.89 ;
+            }else if ((quantidadeLitros > 20) && (tipoCombustivel === "A")){
+                msg = descontoAlcool21;
+            }else if ((quantidadeLitros <= 20) && (tipoCombustivel === "G")){
+                msg = descontoGasolina20;
+            }else{
+                msg = descontoGasolina21;
+            }
+            return msg;
+        }
+    </script>
+</body>
+</html>
