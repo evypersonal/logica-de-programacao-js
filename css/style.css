@@ -120,4 +120,10 @@ input{
     flex-direction: row; /*estabelece a direção do alinhamento*/
     justify-content: center; /* centraliza no eixo horizontal/ principal*/ 
     align-items: center; /*alinha no eixo vertical/ secundário*/
+    gap: 1rem;
+}
+
+/* Adicionando o cifrão na classe criada 'monetario' */
+.monetario::before{
+    content: "R$ ";
 }
