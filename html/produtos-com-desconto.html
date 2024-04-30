@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos com desconto</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+    <a href="../index.html">↩Home</a>
+    <h1 class="titulo-pagina">Produtos com desconto</h1>
+    
+    <main>
+
+        <form action="">
+            <div class="controle-form">
+                <label for="codigoProduto">Código do produto</label>
+                <input type="number" name="" id="codigoProduto" required autofocus>
+            </div>
+
+            <div class="controle-form">
+                <label for="qtdeProduto">Quantidade do Produto</label>
+                <input type="number" name="" id="qtdeProduto" required>    
+            </div>
+
+            <div class="botoes">
+                <button type="button" id="btCalcular" class="acao-positiva">Calcular</button>
+                <button type="reset" class="acao-negativa">Limpar</button>
+            </div>
+        </form>
+        <div id="mostrarResultado">
+
+        </div>
+    </main>
+
+    <script src="/js/desafio6.js"></script>
+    
+    <script>
+        document.querySelector('#btCalcular').addEventListener('click', () =>{
+    const codigoProduto = Number(document. querySelector('#codigoProduto').value);
+    const qtdeProduto = Number(document.querySelector('#qtdeProduto').value);
+
+    const produto = calculaDesconto(codigoProduto, qtdeProduto);
+
+    // Criando um elemento
+    const pDescricao = document.createElement('p');
+    // console.log(pDescricao);
+
+    pDescricao.innerHTML = produto.descricao;
+    // Criando um atributo para o pDescricao
+    pDescricao.setAttribute('data-produto', produto.codigo);
+    
+    
+    const pValorFinal = document.createElement('p');
+    pValorFinal.innerHTML = produto.valorFinal.toFixed(2);
+    // Criando uma classe no elemento pValorFinal
+    pValorFinal.classList.add('monetario');
+
+
+    // Pegando o atributo 'valorFinal' do objeto 'produto' retornado na variavel 'produto'
+    // document.querySelector('#mostrarResultado').innerHTML = produto.valorFinal.toFixed(2);
+
+    document.querySelector('#mostrarResultado').append(pDescricao, pValorFinal);
+    // o metodo 'appendChild irá anexar o primeiro elemento criado' // O metodo 'append' irá anexar todos os elementos criados
+
+
+})
+    </script>
+</body>
+</html>
