@@ -127,3 +127,24 @@ input{
 .monetario::before{
     content: "R$ ";
 }
+
+/* header nav{
+    margin: 2rem;
+}
+
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+header a{
+    display: flex;
+    text-decoration: none;
+    text-transform: none;
+    color: #4c49d8;
+    border: 1px black solid;
+    font-size: 14px;
+} */
