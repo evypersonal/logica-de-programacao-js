@@ -9,7 +9,7 @@
     <title>Classificação de um Triangulo</title>
 </head>
 <body>
-    <a href="../index.html">↩ Home </a>
+    <!-- <a href="../index.html">↩ Home </a> -->
     <h1 class="titulo-pagina">Classificação do triângulo</h1>
     
     <main>
@@ -25,56 +25,59 @@
                         <input type="number" min="0" id="ladoA">
                     </div>
                     <!-- O input precisa do ID para ser encontrado pelo javascript no DOM -->
-                
+                    
                     <div class="controle-form">
                         <label for="ladoB">Lado B</label>
                         <input type="number" min="0" id="ladoB">
                     </div>
-                
+                    
                     <div class="controle-form">
                         <label for="ladoC">Lado C</label>
                         <input type="number" min="0" id="ladoC">
                     </div>
                     <!-- Botões para classificar e limpar o formulário -->
                 </div>
-
+                
                 <div class="botoes">
                     <button type="button" id="btClassificar" class="acao-positiva">Classificar</button>
                     <button type="reset" id="btReset" class="acao-negativa">Limpar</button>
                 </div>
-            
+                
             </form>
             <div id="mostrarResultado"></div>
             <!-- Div vazia para exibição do resultado na própria página -->
         </div>
     </main>
+
+    <!-- Importanto barra de navegação NAVBAR-->
+    <script src="/js/navbar.js"></script>
     
+    
+    <!-- Funções dos botões-->
+    <script>
+        // console.log (classificaTriangulo(10, 10, 100)); //teste no console
         
-        <!-- Script na própria página -->
-        <script>
-            // console.log (classificaTriangulo(10, 10, 100)); //teste no console
-            
-            // inserindo funcionalidade nos botões
+        // inserindo funcionalidade nos botões
         document.querySelector('#btClassificar').addEventListener('click', () => { // arrow function (função anônima)
             // pegando os dados
             const ladoA = Number(document.querySelector('#ladoA').value);
             const ladoB = Number(document.querySelector('#ladoB').value);
             const ladoC = Number(document.querySelector('#ladoC').value);
-
+            
             // enviando os dados
             const classificacao = classificaTriangulo(ladoA, ladoB, ladoC);
-
+            
             // inserindo na div o retorno
             document.querySelector('#mostrarResultado').innerHTML = classificacao;
             // testando os tipos de variáveis
             // console.log (typeof (ladoA), typeof(ladoB), typeof (ladoC), classificacao)
-
+            
             // funcionalidade do botão reset
             document.querySelector('#btReset').addEventListener('click', () => {
                 document.querySelector('#mostrarResultado').innerHTML = '';
             });
         });
-
+        
         function classificaTriangulo(ladoA, ladoB, ladoC){
             let msgErro;
             let tipoTriangulo;
@@ -97,11 +100,6 @@
         }
             // fim do teste do triângulo
     </script>
-
-<!-- Estilização -->
-<!-- 
-    
- -->
 
 </body>
 </html>
