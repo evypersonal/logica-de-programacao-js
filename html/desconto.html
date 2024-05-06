@@ -23,13 +23,13 @@
                 </div>
                 
                 <div class="elementos-em-linha">
-                    <label for="tipoDesconto">Selecione a forma de desconto:
-                        <select name="tipoDesconto" id="tipoDesconto">
+                    <label for="tipoDesconto">Selecione a forma de desconto:</label>
+                        <input list="desconto" id="tipoDesconto" value="F">
+                        <datalist id="desconto">
                             <option value="F">Funcionário</option>
-                            <option value="C" selected>Cliente</option>
+                            <option value="C">Cliente</option>
                             <option value="V">VIP</option>   
-                        </select>
-                    </label>
+                        </datalist>
                 </div>
 
                 <div class="botoes">
@@ -40,6 +40,8 @@
             <div id="mostrarResultado"></div>
         </div>
     </main>
+
+    <script src="/js/navbar.js"></script>
 
     <script>
         document.querySelector('#btCalcular').addEventListener('click', () =>{

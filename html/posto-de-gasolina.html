@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <a href="../index.html">↩Home</a>
+    <!-- <a href="../index.html">↩Home</a> -->
     <h1 class="titulo-pagina">Obtenha seu desconto</h1>
 
     <main>
@@ -21,10 +21,11 @@
                 
                 <div class="controle-form">
                     <label for="tipoDesconto">Selecione o tipo de Combustivel</label>
-                    <select name="tipoCombustivel" id="tipoCombustivel">
+                    <input list="desconto" id="tipoDesconto">
+                    <datalist id="desconto">
                         <option value="G">[G] Gasolina</option>
                         <option value="A">[A] Alcool</option>
-                    </select>
+                    </datalist>
                 </div>
             </div>
         </form>
@@ -34,6 +35,8 @@
         </div>
         <div id="mostrarResultado"></div>
     </main>
+
+    <script src="/js/navbar.js"></script>
 
     <script>
         document.querySelector('#btCalcular').addEventListener('click', () => {

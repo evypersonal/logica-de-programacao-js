@@ -23,23 +23,36 @@
         
                 <div class="controle-form">
                     <label for="escalaAtual">Selecione a escala atual:</label>
-                    <select id="escalaAtual">
+                    <input list="escalas" id="escalaAtual">
+                    <datalist id="escalas">
                         <option value="C" selected>Celsius</option>
                         <option value="F">Fahrenheit</option>
                         <option value="K">Kelvin</option>
-                    </select>
+                    </datalist>
+                    <!-- <select id="escalaAtual">
+                        <option value="C" selected>Celsius</option>
+                        <option value="F">Fahrenheit</option>
+                        <option value="K">Kelvin</option>
+                    </select> -->
                 </div>
 
                 <div class="controle-form">
                     <label for="escalaFutura">Selecione para qual escala deseja converter:</label>
-                    <select id="escalaFutura">
+                    <input list="escalas" id="escalaFutura">
+                    <datalist id="escalas">
                         <option value="C" selected>Celsius</option>
                         <option value="F">Fahrenheit</option>
                         <option value="K">Kelvin</option>
-                    </select>
+                    </datalist>
+                    <!-- <select id="escalaFutura">
+                        <option value="C" selected>Celsius</option>
+                        <option value="F">Fahrenheit</option>
+                        <option value="K">Kelvin</option>
+                    </select> -->
                 </div>
         
             </div>
+
 
             <div class="botoes">
                 <button type="button" id="btConverte" class="acao-positiva">Converter Temperatura</button>
