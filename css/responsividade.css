@@ -1,0 +1,34 @@
+/* 
+    Estilos para outros tamanhos de telas:
+    Mobile -> Até 400px
+    Tablet -> Até 768px
+    TVs -> Maior que 1920px
+
+
+    MidiaQuery -> Perguntar para o navegador aonde está sendo exibido o site;
+*/
+
+/* MediaQuery Mobile */
+@media screen and (max-width: 400px){
+    .titulo-pagina{
+        width: 100%;
+    }
+
+    main{
+        width: 80%;
+    }
+
+    .elementos-em-linha, .botoes{
+        flex-direction: column;
+    }
+}
+
+/* MediaQuery Tablet */
+@media screen and (max-width: 768px){
+    
+}
+
+/* MediaQuery TVs */
+@media screen and (min-width: 1921px){
+    
+}

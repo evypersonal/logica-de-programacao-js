@@ -164,4 +164,5 @@ const linkNavbar = document.createElement('link');
 linkNavbar.setAttribute('rel', 'stylesheet');
 linkNavbar.setAttribute('href', '/css/navbar.css');
 
-document.head.appendChild(linkNavbar);
+// Mudando a ordem do link navbar para que seja aplicado a responsividade por último//
+document.querySelector('[href="/css/responsividade.css"]').insertAdjacentElement('beforebegin', linkNavbar);
