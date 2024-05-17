@@ -5,9 +5,14 @@
 }
 
 body{
+    background-color: #232323;
+    color: #cdcdcd;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* body{
     font-family: 'Ubuntu', sans-serif;
     background-color: #f5f5dc;
-}
+} */
 
 main{
     width: 600px; /*largura*/
@@ -17,7 +22,7 @@ main{
     border: 1px solid #000000; /* Shorthand para a borda*/
     margin: auto;
     padding: 2rem; /*preenchimento*/
-    background-color: #fff;
+    background-color: #232323;
     border-radius: 8px;
     box-shadow: 4px 4px 2px #888; /*horizontal / vertical / espalhamento / cor*/
 }
@@ -107,13 +112,14 @@ input{
     padding-left: 8px; /*padding do cursor*/
     margin-top: 6px; /*distância entre o input e o texto acima*/
     /* outline: none; */
+    background-color: #cdcdcd;
 
 }
 
 /* Estilizando a div do 'Resultado' */
 #mostrarResultado{
-    border: 1px solid #000000;
-    height: 2rem;
+    border: 1px solid #ffffff;
+    height: 4rem;
     margin: 2rem 0 0 0;
     border-radius: 4px;
     display: flex;
@@ -121,6 +127,8 @@ input{
     justify-content: center; /* centraliza no eixo horizontal/ principal*/ 
     align-items: center; /*alinha no eixo vertical/ secundário*/
     gap: 1rem;
+    background-color: #cdcdcd;
+    width: 100%;
 }
 
 /* Adicionando o cifrão na classe criada 'monetario' */

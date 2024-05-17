@@ -1,17 +1,17 @@
 /* <button type="button" id="btMenu">Menu</button> */
 {/* <button type="button" id="btFechar" class="menu-sandwich-oculto">Fechar</button> */}
 
-const buttonM = document.createElement('button');
-buttonM.setAttribute('type', 'button');
-buttonM.setAttribute('id', 'btMenu');
-// buttonM.setAttribute('class', 'menu-sandwich-oculto');
-buttonM.innerHTML = '☰';
+// const buttonM = document.createElement('button');
+// buttonM.setAttribute('type', 'button');
+// buttonM.setAttribute('id', 'btMenu');
+// // buttonM.setAttribute('class', 'menu-sandwich-oculto');
+// buttonM.innerHTML = '☰';
 
-const buttonF = document.createElement('button');
-buttonF.setAttribute('type', 'button');
-buttonF.setAttribute('id', 'btFechar');
-buttonF.setAttribute('class', 'menu-sandwich-oculto');
-buttonF.innerHTML = '︽';
+// const buttonF = document.createElement('button');
+// buttonF.setAttribute('type', 'button');
+// buttonF.setAttribute('id', 'btFechar');
+// buttonF.setAttribute('class', 'menu-sandwich-oculto');
+// buttonF.innerHTML = '︽';
 
 // Fazendo append
 // document.body.append(buttonM, buttonF);
@@ -24,23 +24,19 @@ buttonF.innerHTML = '︽';
     </div>
 </div>
 </header> */
+const input = document.createElement('input');
+input.setAttribute('type', 'checkbox');
+input.setAttribute('class', 'menu-fake');
 
-const spanL = document.createElement('span')
-spanL.innerHTML = 'Desafios & Exercicios'
+const span1 = document.createElement('span')
+const span2 = document.createElement('span')
+const span3 = document.createElement('span')
 
-const divL = document.createElement('div');
-divL.setAttribute('class', 'logo')
-divL.append(spanL)
-
-const divMenu = document.createElement('div')
-divMenu.setAttribute('class', 'logo-menu')
-divMenu.append(buttonM,buttonF,divL);
-
-const headerNav = document.createElement('headerNav');
-headerNav.append(divMenu);
+const divLinha = document.createElement('div');
+divLinha.setAttribute('class', 'menu-linhas')
+divLinha.append(span1,span2,span3)
 
 const ancoras = [
-    { "url": "/index.html", "texto": "Home" }, 
     { "url": "/html/desafio1.html", "texto": "Desafio 1" }, 
     { "url": "/html/desafio2.html", "texto": "Desafio 2" }, 
     { "url": "/html/desafio3.html", "texto": "Desafio 3" }, 
@@ -84,29 +80,42 @@ function criaUlNav(ancoras){
     return ul;
 }
 
+const navH = document.createElement('nav');
+navH.setAttribute('class', 'menu')
+navH.append(input, divLinha, (criaUlNav(ancoras)))
+
+// separação
+
+// const spanL = document.createElement('span')
+// spanL.innerHTML = 'Desafios & Exercicios'
+
+// const headerNav = document.createElement('headerNav');
+// headerNav.append(divMenu);
+
+
 // const ancoras = document.createElement('a');
 // ancoras.setAttribute('href', '/html/classificacao-triangulo.html') 
 // ancoras.innerHTML = 'Exercicio 1'
 
-const div = document.createElement('div');
-div.setAttribute('id', 'menu-sandwich');
-div.setAttribute('class', 'menu-sandwich-oculto')
-div.append(criaUlNav(ancoras))
+// const div = document.createElement('div');
+// div.setAttribute('id', 'menu-sandwich');
+// div.setAttribute('class', 'menu-sandwich-oculto')
+// div.append(criaUlNav(ancoras))
 
 
-document.body.append(divMenu,div)
+// document.body.append(divMenu,div)
 
-document.querySelector('#btMenu').addEventListener('click', () =>{
-    document.querySelector('#menu-sandwich').classList.remove('menu-sandwich-oculto')
-    document.querySelector('#btMenu').classList.add('menu-sandwich-oculto')
-    document.querySelector('#btFechar').classList.remove('menu-sandwich-oculto')
+// document.querySelector('#btMenu').addEventListener('click', () =>{
+//     document.querySelector('#menu-sandwich').classList.remove('menu-sandwich-oculto')
+//     document.querySelector('#btMenu').classList.add('menu-sandwich-oculto')
+//     document.querySelector('#btFechar').classList.remove('menu-sandwich-oculto')
 
-})
-document.querySelector('#btFechar').addEventListener('click',() =>{
-    document.querySelector('#menu-sandwich').classList.add('menu-sandwich-oculto')
-    document.querySelector('#btFechar').classList.add('menu-sandwich-oculto')
-    document.querySelector('#btMenu').classList.remove('menu-sandwich-oculto')
-})
+// })
+// document.querySelector('#btFechar').addEventListener('click',() =>{
+//     document.querySelector('#menu-sandwich').classList.add('menu-sandwich-oculto')
+//     document.querySelector('#btFechar').classList.add('menu-sandwich-oculto')
+//     document.querySelector('#btMenu').classList.remove('menu-sandwich-oculto')
+// })
 
 
 // Array contendo ancoras de entrada
@@ -182,7 +191,7 @@ document.querySelector('#btFechar').addEventListener('click',() =>{
 
 // utilizando métodos para anexar os elementos no lugar certo
 // document.body.insertBefore(nav, document.body.firstChild);
-document.body.insertAdjacentElement('afterbegin', header)
+document.body.insertAdjacentElement('afterbegin', navH)
 
 
 // Estilos do NAVBAR
