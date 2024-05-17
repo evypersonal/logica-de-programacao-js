@@ -1,16 +1,16 @@
 // Array contendo ancoras de entrada
 const ancoras = [
     { "url": "/index.html", "texto": "Home" }, 
-    { "url": "/html/calculadora-de-media.html", "texto": "Desafio 1" }, 
-    { "url": "/html/calculadora-imc.html", "texto": "Desafio 2" }, 
-    { "url": "/html/converte-temperatura.html", "texto": "Desafio 3" }, 
-    { "url": "/html/classificacao-triangulo.html", "texto": "Exercicio 1" }, 
-    { "url": "/html/desconto.html", "texto": "Exercicio 2" },
-    { "url": "/html/placar-de-jogo.html", "texto": "Exercicio 3" },
-    { "url": "/html/busca-de-um-nome-automatico.html", "texto": "Exercicio 4" },
-    { "url": "/html/posto-de-gasolina.html", "texto": "Exercicio 5" },
-    { "url": "/html/produtos-com-desconto.html", "texto": "Exercicio 6" },
-    { "url": "/html/taxa-de-natalidade.html", "texto": "Exercicio 7" },
+    { "url": "/html/desafio1.html", "texto": "Desafio 1" }, 
+    { "url": "/html/desafio2.html", "texto": "Desafio 2" }, 
+    { "url": "/html/desafio3.html", "texto": "Desafio 3" }, 
+    { "url": "/html/exercicio1.html", "texto": "Exercicio 1" }, 
+    { "url": "/html/exercicio2.html", "texto": "Exercicio 2" },
+    { "url": "/html/exercicio3.html", "texto": "Exercicio 3" },
+    { "url": "/html/exercicio4.html", "texto": "Exercicio 4" },
+    { "url": "/html/exercicio5.html", "texto": "Exercicio 5" },
+    { "url": "/html/exercicio6.html", "texto": "Exercicio 6" },
+    { "url": "/html/exercicio7.html", "texto": "Exercicio 7" },
 ];
 
 // Função que cria a ancora

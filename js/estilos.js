@@ -1,6 +1,6 @@
 const links = [
     { "rel": "stylesheet", "href":"/css/reset.css"},
-    // { "rel": "stylesheet", "href":"/css/style.css"},
+    { "rel": "stylesheet", "href":"/css/style.css"},
     { "rel": "stylesheet", "href":"/css/navbar-sandwich.css"},
     { "rel": "stylesheet", "href":"/css/responsividade.css"}
 ];

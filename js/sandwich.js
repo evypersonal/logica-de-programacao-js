@@ -41,19 +41,19 @@ headerNav.append(divMenu);
 
 const ancoras = [
     { "url": "/index.html", "texto": "Home" }, 
-    { "url": "/html/calculadora-de-media.html", "texto": "Desafio 1" }, 
-    { "url": "/html/calculadora-imc.html", "texto": "Desafio 2" }, 
-    { "url": "/html/converte-temperatura.html", "texto": "Desafio 3" }, 
-    { "url": "/html/classificacao-triangulo.html", "texto": "Exercicio 1" }, 
-    { "url": "/html/desconto.html", "texto": "Exercicio 2" },
-    { "url": "/html/placar-de-jogo.html", "texto": "Exercicio 3" },
-    { "url": "/html/busca-de-um-nome-automatico.html", "texto": "Exercicio 4" },
-    { "url": "/html/posto-de-gasolina.html", "texto": "Exercicio 5" },
-    { "url": "/html/produtos-com-desconto.html", "texto": "Exercicio 6" },
-    { "url": "/html/taxa-de-natalidade.html", "texto": "Exercicio 7" },
+    { "url": "/html/desafio1.html", "texto": "Desafio 1" }, 
+    { "url": "/html/desafio2.html", "texto": "Desafio 2" }, 
+    { "url": "/html/desafio3.html", "texto": "Desafio 3" }, 
+    { "url": "/html/exercicio1.html", "texto": "Exercicio 1" }, 
+    { "url": "/html/exercicio2.html", "texto": "Exercicio 2" },
+    { "url": "/html/exercicio3.html", "texto": "Exercicio 3" },
+    { "url": "/html/exercicio4.html", "texto": "Exercicio 4" },
+    { "url": "/html/exercicio5.html", "texto": "Exercicio 5" },
+    { "url": "/html/exercicio6.html", "texto": "Exercicio 6" },
+    { "url": "/html/exercicio7.html", "texto": "Exercicio 7" },
 ];
 
-// Função que cria a ancora
+
 function criaAncora(url, texto){
 
     const ancora = document.createElement('a');
@@ -63,6 +63,27 @@ function criaAncora(url, texto){
     return ancora;
 }
 
+// Função que cria o li e apende a ancora dentro
+function criaLista(ancora){
+
+    const lista = document.createElement('li');
+    lista.appendChild(ancora);
+
+    return lista;
+}
+
+// Função que cria a ul // acessa a array // chama as duas funções anteriores// apende o li dentro
+function criaUlNav(ancoras){
+    const ul = document.createElement('ul');
+    
+    ancoras.forEach((ancora) => {
+        const a = criaAncora(ancora.url, ancora.texto);
+        const li = criaLista(a);
+        ul.appendChild(li);
+    });
+    return ul;
+}
+
 // const ancoras = document.createElement('a');
 // ancoras.setAttribute('href', '/html/classificacao-triangulo.html') 
 // ancoras.innerHTML = 'Exercicio 1'
@@ -70,7 +91,7 @@ function criaAncora(url, texto){
 const div = document.createElement('div');
 div.setAttribute('id', 'menu-sandwich');
 div.setAttribute('class', 'menu-sandwich-oculto')
-div.append(ancoras)
+div.append(criaUlNav(ancoras))
 
 
 document.body.append(divMenu,div)
