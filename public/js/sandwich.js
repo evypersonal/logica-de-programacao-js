@@ -37,16 +37,16 @@ divLinha.setAttribute('class', 'menu-linhas')
 divLinha.append(span1,span2,span3)
 
 const ancoras = [
-    { "url": "/html/desafio1.html", "texto": "Desafio 1" }, 
-    { "url": "/html/desafio2.html", "texto": "Desafio 2" }, 
-    { "url": "/html/desafio3.html", "texto": "Desafio 3" }, 
-    { "url": "/html/exercicio1.html", "texto": "Exercicio 1" }, 
-    { "url": "/html/exercicio2.html", "texto": "Exercicio 2" },
-    { "url": "/html/exercicio3.html", "texto": "Exercicio 3" },
-    { "url": "/html/exercicio4.html", "texto": "Exercicio 4" },
-    { "url": "/html/exercicio5.html", "texto": "Exercicio 5" },
-    { "url": "/html/exercicio6.html", "texto": "Exercicio 6" },
-    { "url": "/html/exercicio7.html", "texto": "Exercicio 7" },
+    { "url": "/public/html/desafio1.html", "texto": "Desafio 1" }, 
+    { "url": "/public/html/desafio2.html", "texto": "Desafio 2" }, 
+    { "url": "/public/html/desafio3.html", "texto": "Desafio 3" }, 
+    { "url": "/public/html/exercicio1.html", "texto": "Exercicio 1" }, 
+    { "url": "/public/html/exercicio2.html", "texto": "Exercicio 2" },
+    { "url": "/public/html/exercicio3.html", "texto": "Exercicio 3" },
+    { "url": "/public/html/exercicio4.html", "texto": "Exercicio 4" },
+    { "url": "/public/html/exercicio5.html", "texto": "Exercicio 5" },
+    { "url": "/public/html/exercicio6.html", "texto": "Exercicio 6" },
+    { "url": "/public/html/exercicio7.html", "texto": "Exercicio 7" },
 ];
 
 
@@ -198,8 +198,8 @@ document.body.insertAdjacentElement('afterbegin', navH)
 const linkNavbar = document.createElement('link');
 linkNavbar.setAttribute('rel', 'stylesheet');
 // linkNavbar.setAttribute('href', '/css/navbar.css');
-linkNavbar.setAttribute('href', '/css/navbar-sandwich.css');
+linkNavbar.setAttribute('href', '/public/css/navbar-sandwich.css');
 
 
 // Mudando a ordem do link navbar para que seja aplicado a responsividade por último//
-document.querySelector('[href="/css/responsividade.css"]').insertAdjacentElement('beforebegin', linkNavbar);
+document.querySelector('[href="/public/css/responsividade.css"]').insertAdjacentElement('beforebegin', linkNavbar);

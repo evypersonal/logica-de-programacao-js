@@ -1,0 +1,13 @@
+{
+    "produtos":{
+
+        
+        "id": "",
+        "nome": "bala",
+        "descricao": "bala",
+        "preco": 2.50,
+        "categoria": "doce",
+        "imagem": "bala.jpg"
+    }
+    
+}

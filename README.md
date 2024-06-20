@@ -260,3 +260,31 @@ Kelvin | Farenheit | tF = (tK - 273.15) * 9/5 + 32
 `git remote -v` --> (mostra qual repositorio remoto esta vinculado)
 
 git pull = git fetch (buscar) + git merge (mesclar)
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ==================== -->
+npm install json-server (terminal)
+
+criar pasta "data" e dentro dela o arquivo "db.json";
+
+criar script no package.json : "scripts": {
+    "start": "npx json-server --watch data/db.json --port 3000"
+  }
+
+criar json no "db.json" (produtos)
+
+criar pasta "public" e dentro criar um "index.html";
+
+npm install cypress --save-dev (no terminal)
+
+npx cypress open (no terminal)
