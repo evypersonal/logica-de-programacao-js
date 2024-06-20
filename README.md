@@ -287,4 +287,11 @@ criar pasta "public" e dentro criar um "index.html";
 
 npm install cypress --save-dev (no terminal)
 
-npx cypress open (no terminal)
+adicionar configurações no "cypress.config" para que seja possivel a criação do cypress visual:
+
+    experimentalStudio:true,
+    experimentalRunAllSpecs:true,
+
+npx cypress open (no terminal) -> abrir o cypress visual
+
+npx cypress run (no terminal)-> executar test no terminal
